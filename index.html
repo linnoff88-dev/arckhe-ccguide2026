@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code 2026 | Deep Dive - O Guia Completo</title>
+  <meta name="description" content="O curso mais completo sobre Claude Code em portugues. Domine a CLI da Anthropic do basico ao avancado.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B35',
+            accent: '#00D4FF',
+            dark: { 900: '#0a0f1a', 800: '#111827', 700: '#1f2937', 600: '#374151' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #0a0f1a; }
+
+    /* Hero background gradient only */
+    .hero-bg {
+      background: linear-gradient(135deg, rgba(10, 15, 26, 1) 0%, rgba(17, 24, 39, 1) 50%, rgba(10, 15, 26, 1) 100%);
+    }
+
+    /* Glow effects */
+    .glow-orange { box-shadow: 0 0 40px rgba(255, 107, 53, 0.3); }
+    .glow-cyan { box-shadow: 0 0 40px rgba(0, 212, 255, 0.3); }
+    .text-glow { text-shadow: 0 0 30px rgba(255, 107, 53, 0.5); }
+
+    /* Animated gradient border */
+    .gradient-border {
+      background: linear-gradient(135deg, #FF6B35, #00D4FF, #FF6B35);
+      background-size: 200% 200%;
+      animation: gradient-shift 3s ease infinite;
+    }
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Card hover effects */
+    .track-card {
+      transition: all 0.3s ease;
+      transform: translateY(0);
+    }
+    .track-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* Light mode overrides */
+    html:not(.dark) body {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+    }
+    html:not(.dark) .hero-bg {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+    }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-dark-600/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="flex items-center space-x-3">
+            <span class="text-3xl">🤖</span>
+            <div>
+              <span class="font-black text-xl text-primary">CLAUDE CODE</span>
+              <span class="text-neutral-400 text-sm ml-2">2026</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-semibold hidden sm:block">INEMA.CLUB</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero-bg min-h-screen flex items-center justify-center pt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left: Text Content -->
+        <div class="text-center lg:text-left">
+          <div class="inline-block px-4 py-2 bg-primary/20 rounded-full mb-6">
+            <span class="text-primary font-semibold text-sm">DEEP DIVE 2026</span>
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+            <span class="text-primary text-glow">CLAUDE</span><br>
+            <span class="text-accent">CODE</span>
+          </h1>
+
+          <p class="text-xl sm:text-2xl text-neutral-300 mb-4 font-medium">
+            O Guia Completo para Entender<br class="hidden sm:block"> Como Funciona
+          </p>
+
+          <p class="text-neutral-400 mb-8 max-w-lg mx-auto lg:mx-0">
+            Desmontando para entender como tudo funciona. Do basico ao avancado,
+            domine a CLI mais poderosa para desenvolvimento com IA.
+          </p>
+
+          <!-- Stats inline -->
+          <div class="flex flex-wrap justify-center lg:justify-start gap-6 mb-10">
+            <div class="text-center">
+              <div class="text-3xl font-black text-primary">9</div>
+              <div class="text-xs text-neutral-500 uppercase tracking-wider">Trilhas</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-black text-accent">72</div>
+              <div class="text-xs text-neutral-500 uppercase tracking-wider">Modulos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-black text-primary">432</div>
+              <div class="text-xs text-neutral-500 uppercase tracking-wider">Topicos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-black text-accent">~36h</div>
+              <div class="text-xs text-neutral-500 uppercase tracking-wider">Conteudo</div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="curso/trilha1/index.html" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-orange-600 transition-all glow-orange">
+              <span>Comecar Agora</span>
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+            <a href="#trilhas" class="inline-flex items-center justify-center px-8 py-4 border-2 border-accent text-accent font-bold rounded-xl hover:bg-accent/10 transition-all">
+              <span>Ver Trilhas</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Hero Image -->
+        <div class="hidden lg:flex justify-center">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-3xl rounded-full"></div>
+            <img src="assets/img/hero-claude-code.png" alt="Claude Code Deep Dive" class="relative w-full max-w-lg rounded-2xl shadow-2xl">
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden lg:block">
+        <svg class="w-6 h-6 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ANATOMIA SECTION -->
+  <section class="py-20 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left: Image -->
+        <div class="order-2 lg:order-1">
+          <img src="assets/img/anatomia-claude-code.png" alt="Anatomia do Claude Code" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-dark-600">
+        </div>
+
+        <!-- Right: Text -->
+        <div class="order-1 lg:order-2 text-center lg:text-left">
+          <h2 class="text-3xl sm:text-4xl font-black mb-6">
+            <span class="text-primary">Anatomia</span> do Claude Code
+          </h2>
+          <p class="text-neutral-400 mb-6 text-lg">
+            Entenda como o Claude Code funciona <strong class="text-white">por dentro</strong>.
+            Do CLI ao Tool Executor, passando pelo gerenciamento de contexto e o poderoso loop
+            <span class="text-accent">Gather → Act → Verify</span>.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <span class="w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center text-emerald-400">1</span>
+              <span class="text-neutral-300">Arquitetura e Componentes Internos</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400">2</span>
+              <span class="text-neutral-300">Ferramentas Nativas (Read, Write, Edit...)</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400">3</span>
+              <span class="text-neutral-300">Extensibilidade (Skills, MCP, Hooks)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRILHAS SECTION -->
+  <section id="trilhas" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-black mb-4">Escolha sua <span class="text-primary">Trilha</span></h2>
+        <p class="text-neutral-400 text-lg max-w-2xl mx-auto">
+          Nove jornadas completas, do iniciante ao avancado. Cada trilha com 8 modulos e 48 topicos.
+        </p>
+      </div>
+
+      <!-- Trilhas Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Trilha 1 - Fundamentos -->
+        <a href="curso/trilha1/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-emerald-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 1</span>
+                  <span class="text-4xl">🎯</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-400 transition-colors">Fundamentos</h3>
+                <p class="text-neutral-400 mb-6">Entenda o Claude Code por dentro. Arquitetura, modelo mental, contexto e compaction.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-emerald-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-emerald-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-emerald-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-emerald-500/10 flex items-center justify-between">
+                <span class="text-emerald-400 font-semibold">Comecar</span>
+                <svg class="w-5 h-5 text-emerald-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 2 - Comandos -->
+        <a href="curso/trilha2/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-blue-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-blue-500/20 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 2</span>
+                  <span class="text-4xl">⚡</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">Comandos e Ferramentas</h3>
+                <p class="text-neutral-400 mb-6">Domine cada ferramenta: Read, Write, Edit, Glob, Grep, Bash, Git e Web Tools.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-blue-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-blue-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-blue-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-blue-500/10 flex items-center justify-between">
+                <span class="text-blue-400 font-semibold">Explorar</span>
+                <svg class="w-5 h-5 text-blue-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 3 - Avancado -->
+        <a href="curso/trilha3/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-purple-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-purple-500/20 text-purple-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 3</span>
+                  <span class="text-4xl">🚀</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">Projetos Avancados</h3>
+                <p class="text-neutral-400 mb-6">Skills, MCP, Hooks, Subagentes, CI/CD e orquestracao multi-agente.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-purple-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-purple-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-purple-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-purple-500/10 flex items-center justify-between">
+                <span class="text-purple-400 font-semibold">Avancado</span>
+                <svg class="w-5 h-5 text-purple-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 4 - MiniCurso18 -->
+        <a href="curso/trilha4/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-amber-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 4</span>
+                  <span class="text-4xl">🎬</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">MiniCurso18</h3>
+                <p class="text-neutral-400 mb-6">Curso completo e abrangente. Do basico ao avancado em 18 capitulos consolidados.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-amber-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-amber-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-amber-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-amber-500/10 flex items-center justify-between">
+                <span class="text-amber-400 font-semibold">Completo</span>
+                <svg class="w-5 h-5 text-amber-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 5 - 95CC Automacao -->
+        <a href="curso/trilha5/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-teal-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-teal-500/20 text-teal-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 5</span>
+                  <span class="text-4xl">⚙️</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-400 transition-colors">95CC - Automacao</h3>
+                <p class="text-neutral-400 mb-6">Framework WAT, construa automacoes praticas e faca deploy em producao com Modal.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-teal-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-teal-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-teal-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-teal-500/10 flex items-center justify-between">
+                <span class="text-teal-400 font-semibold">Pratico</span>
+                <svg class="w-5 h-5 text-teal-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 6 - BeginCC Iniciante -->
+        <a href="curso/trilha6/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-rose-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-rose-500/20 text-rose-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 6</span>
+                  <span class="text-4xl">🌱</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-rose-400 transition-colors">BeginCC - Iniciante</h3>
+                <p class="text-neutral-400 mb-6">Guia completo para iniciantes. Nao precisa saber programar para comecar.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-rose-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-rose-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-rose-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-rose-500/10 flex items-center justify-between">
+                <span class="text-rose-400 font-semibold">Iniciante</span>
+                <svg class="w-5 h-5 text-rose-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 7 - Modo Deus -->
+        <a href="curso/trilha7/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-cyan-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-cyan-500/20 text-cyan-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 7</span>
+                  <span class="text-4xl">⚡</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Modo Deus</h3>
+                <p class="text-neutral-400 mb-6">Terminais paralelos, sessoes em fase, e o poder real do multi-terminal.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-cyan-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-cyan-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-cyan-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-cyan-500/10 flex items-center justify-between">
+                <span class="text-cyan-400 font-semibold">Paralelo</span>
+                <svg class="w-5 h-5 text-cyan-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 8 - QQApp -->
+        <a href="curso/trilha8/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-lime-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-lime-500/20 text-lime-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 8</span>
+                  <span class="text-4xl">🌐</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-lime-400 transition-colors">QQApp - n8n Apps</h3>
+                <p class="text-neutral-400 mb-6">Transforme workflows n8n em web apps com Claude Code, GitHub e Vercel.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-lime-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-lime-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-lime-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-lime-500/10 flex items-center justify-between">
+                <span class="text-lime-400 font-semibold">Web Apps</span>
+                <svg class="w-5 h-5 text-lime-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 9 - Fabrica Skills -->
+        <a href="curso/trilha9/index.html" class="track-card group">
+          <div class="gradient-border p-[2px] rounded-2xl">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden h-full">
+              <div class="bg-gradient-to-br from-fuchsia-900/40 to-dark-800 p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="px-4 py-1.5 bg-fuchsia-500/20 text-fuchsia-400 text-xs font-bold rounded-full uppercase tracking-wider">Trilha 9</span>
+                  <span class="text-4xl">🏭</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-fuchsia-400 transition-colors">Fabrica de Skills</h3>
+                <p class="text-neutral-400 mb-6">Crie skills customizados em escala com meta prompts e automacao.</p>
+
+                <div class="flex items-center justify-between text-sm border-t border-dark-600 pt-4">
+                  <div>
+                    <span class="text-fuchsia-400 font-bold">8</span>
+                    <span class="text-neutral-500 ml-1">modulos</span>
+                  </div>
+                  <div>
+                    <span class="text-fuchsia-400 font-bold">48</span>
+                    <span class="text-neutral-500 ml-1">topicos</span>
+                  </div>
+                  <div>
+                    <span class="text-fuchsia-400 font-bold">~4h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-8 py-4 bg-fuchsia-500/10 flex items-center justify-between">
+                <span class="text-fuchsia-400 font-semibold">Factory</span>
+                <svg class="w-5 h-5 text-fuchsia-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCE VAI APRENDER -->
+  <section class="py-20 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-black mb-4">O que voce vai <span class="text-accent">aprender</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 hover:border-primary/50 transition-colors">
+          <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">🧠</span>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Arquitetura Interna</h4>
+          <p class="text-neutral-400 text-sm">Entenda como o Claude Code funciona: CLI, Session Manager, Tool Executor e Permission Layer.</p>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 hover:border-accent/50 transition-colors">
+          <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">📊</span>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Gerenciamento de Contexto</h4>
+          <p class="text-neutral-400 text-sm">Domine a janela de 200K tokens. Compaction, regra 40-50% e estrategias de otimizacao.</p>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 hover:border-emerald-500/50 transition-colors">
+          <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">🔧</span>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Ferramentas Nativas</h4>
+          <p class="text-neutral-400 text-sm">Read, Write, Edit, Glob, Grep, Bash - cada ferramenta com sintaxe e exemplos praticos.</p>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 hover:border-blue-500/50 transition-colors">
+          <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">📝</span>
+          </div>
+          <h4 class="font-bold text-lg mb-2">CLAUDE.md Eficiente</h4>
+          <p class="text-neutral-400 text-sm">Crie arquivos de configuracao que realmente funcionam. Estrutura, hierarquia e boas praticas.</p>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 hover:border-purple-500/50 transition-colors">
+          <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">⚡</span>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Skills e Automacao</h4>
+          <p class="text-neutral-400 text-sm">Crie comandos customizados, fluxos reutilizaveis e hooks automaticos para seu workflow.</p>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 hover:border-primary/50 transition-colors">
+          <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">🤖</span>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Multi-Agente</h4>
+          <p class="text-neutral-400 text-sm">Orquestre multiplos agentes trabalhando em paralelo. Subagentes, MCP e CI/CD com Claude.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-gradient-to-br from-primary/20 via-dark-800 to-accent/20 rounded-3xl p-12 border border-dark-600">
+        <h2 class="text-3xl sm:text-4xl font-black mb-4">Pronto para dominar o <span class="text-primary">Claude Code</span>?</h2>
+        <p class="text-neutral-400 mb-8 text-lg">Comece agora pela Trilha 1 e construa uma base solida de conhecimento.</p>
+        <a href="curso/trilha1/index.html" class="inline-flex items-center justify-center px-10 py-5 bg-primary text-white font-bold text-lg rounded-xl hover:bg-orange-600 transition-all glow-orange">
+          <span>Iniciar Jornada</span>
+          <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-dark-600 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center">
+        <div class="flex items-center space-x-3 mb-4 sm:mb-0">
+          <span class="text-2xl">🤖</span>
+          <span class="font-bold text-primary">Claude Code 2026</span>
+        </div>
+        <p class="text-neutral-500 text-sm">
+          Criado por <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-semibold">INEMA.CLUB</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !html.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+      html.classList.remove('dark');
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
