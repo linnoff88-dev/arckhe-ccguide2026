@@ -9,12 +9,12 @@
 
 | Trilha | Nome | Cor | Modulos | Status |
 |--------|------|-----|---------|--------|
-| T1 | Fundamentos | Emerald | 8 | ✅ Completa (QA revisado) |
-| T2 | Comandos e Ferramentas | Blue | 8 | ✅ Completa |
-| T3 | Projetos Avancados | Purple | 8 | ✅ Completa |
-| T4 | MiniCurso18 | Amber | 8 | ⏳ Pendente |
-| T5 | 95CC - Automacao | Teal | 8 | ⏳ Pendente |
-| T6 | BeginCC - Iniciante | Rose | 8 | ⏳ Pendente |
+| T1 | Fundamentos | Emerald | 8 | âœ… Completa (QA revisado) |
+| T2 | Comandos e Ferramentas | Blue | 8 | âœ… Completa |
+| T3 | Projetos Avancados | Purple | 8 | âœ… Completa |
+| T4 | MiniCurso18 | Amber | 8 | â³ Pendente |
+| T5 | 95CC - Automacao | Teal | 8 | â³ Pendente |
+| T6 | BeginCC - Iniciante | Rose | 8 | â³ Pendente |
 
 ---
 
@@ -25,18 +25,18 @@
 - [x] index.html - Pagina principal do curso
 - [x] curso/ - Pasta do curso
 
-### Trilha 1 - Fundamentos (Emerald) ✅ QA Revisado
+### Trilha 1 - Fundamentos (Emerald) âœ… QA Revisado
 - [x] curso/trilha1/index.html - Index da trilha (48 topicos expandiveis)
 - [x] curso/trilha1/modulo-1-1.html - Introducao ao Claude Code
 - [x] curso/trilha1/modulo-1-2.html - Arquitetura do Sistema
-- [x] curso/trilha1/modulo-1-3.html - Loop Central: Gather → Act → Verify
+- [x] curso/trilha1/modulo-1-3.html - Loop Central: Gather â†’ Act â†’ Verify
 - [x] curso/trilha1/modulo-1-4.html - Gerenciamento de Contexto
 - [x] curso/trilha1/modulo-1-5.html - Compaction: Dominando a Compressao
 - [x] curso/trilha1/modulo-1-6.html - Sessoes e Persistencia
 - [x] curso/trilha1/modulo-1-7.html - Permissoes e Seguranca
 - [x] curso/trilha1/modulo-1-8.html - Interface e Navegacao
 
-### Trilha 2 - Comandos e Ferramentas (Blue) ✅
+### Trilha 2 - Comandos e Ferramentas (Blue) âœ…
 - [x] curso/trilha2/index.html - Index da trilha
 - [x] curso/trilha2/modulo-2-1.html - Read: Leitura Inteligente
 - [x] curso/trilha2/modulo-2-2.html - Write e Edit: Criacao e Edicao
@@ -47,7 +47,7 @@
 - [x] curso/trilha2/modulo-2-7.html - Task e Subagentes Nativos
 - [x] curso/trilha2/modulo-2-8.html - AskUserQuestion e Interacao
 
-### Trilha 3 - Projetos Avancados (Purple) ✅
+### Trilha 3 - Projetos Avancados (Purple) âœ…
 - [x] curso/trilha3/index.html - Index da trilha
 - [x] curso/trilha3/modulo-3-1.html - CLAUDE.md: Memoria Persistente
 - [x] curso/trilha3/modulo-3-2.html - Skills: Fluxos Sob Demanda
@@ -58,7 +58,7 @@
 - [x] curso/trilha3/modulo-3-7.html - GitHub Actions e CI/CD
 - [x] curso/trilha3/modulo-3-8.html - Projeto Final: Sistema Completo
 
-### Trilha 4 - MiniCurso18 (Amber) ⏳
+### Trilha 4 - MiniCurso18 (Amber) â³
 **Fonte:** `doc/minicurso18capitulos/` (18 capitulos consolidados)
 - [ ] curso/trilha4/index.html - Index da trilha
 - [ ] curso/trilha4/modulo-4-1.html - Introducao ao Claude Code
@@ -70,7 +70,7 @@
 - [ ] curso/trilha4/modulo-4-7.html - Hooks e Seguranca
 - [ ] curso/trilha4/modulo-4-8.html - Casos Avancados e Futuro
 
-### Trilha 5 - 95CC Automacao (Teal) ⏳
+### Trilha 5 - 95CC Automacao (Teal) â³
 **Fonte:** `doc/95cc/` (WAT framework + deploy)
 - [ ] curso/trilha5/index.html - Index da trilha
 - [ ] curso/trilha5/modulo-5-1.html - Interface e Ambiente
@@ -82,7 +82,7 @@
 - [ ] curso/trilha5/modulo-5-7.html - Deploy no Modal
 - [ ] curso/trilha5/modulo-5-8.html - Workflow Completo
 
-### Trilha 6 - BeginCC Iniciante (Rose) ⏳
+### Trilha 6 - BeginCC Iniciante (Rose) â³
 **Fonte:** `doc/begincc/` (guia para nao-tecnicos)
 - [ ] curso/trilha6/index.html - Index da trilha
 - [ ] curso/trilha6/modulo-6-1.html - Por que Claude Code?
@@ -104,7 +104,7 @@
 - [x] Navegacao funcional
 - [x] Theme toggle funcionando
 - [x] Light mode CSS incluido
-- [x] INEMA.CLUB link presente
+- [x] ARCKHÉ AI link presente
 
 ### Index das Trilhas
 - [x] Header com gradiente (emerald/blue/purple)
@@ -144,15 +144,15 @@ Correcoes aplicadas:
 
 ## PROXIMOS PASSOS
 
-### Fase 1-3: Trilhas Originais ✅
-1. ✅ Criar index.html (pagina principal)
-2. ✅ Criar Trilha 1 - Fundamentos (8 modulos)
-3. ✅ Criar Trilha 2 - Comandos e Ferramentas (8 modulos)
-4. ✅ Criar Trilha 3 - Projetos Avancados (8 modulos)
-5. ✅ QA da Trilha 1
-6. ✅ QA das Trilhas 2 e 3
+### Fase 1-3: Trilhas Originais âœ…
+1. âœ… Criar index.html (pagina principal)
+2. âœ… Criar Trilha 1 - Fundamentos (8 modulos)
+3. âœ… Criar Trilha 2 - Comandos e Ferramentas (8 modulos)
+4. âœ… Criar Trilha 3 - Projetos Avancados (8 modulos)
+5. âœ… QA da Trilha 1
+6. âœ… QA das Trilhas 2 e 3
 
-### Fase 4: Novas Trilhas ⏳
+### Fase 4: Novas Trilhas â³
 7. [ ] Criar diretorios trilha4/, trilha5/, trilha6/
 8. [ ] Criar index.html das 3 novas trilhas
 9. [ ] Criar Trilha 4 - MiniCurso18 (8 modulos)

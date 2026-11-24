@@ -43,11 +43,11 @@
       <div class="flex justify-between items-center h-14">
         <div class="flex items-center space-x-4">
           <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🤖</span>
+            <span class="text-2xl">ðŸ¤–</span>
             <span class="font-bold text-lg hidden sm:inline">Claude Code 2026</span>
           </a>
           <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+          <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">ARCKHÉ AI</a>
         </div>
         <div class="flex items-center space-x-1 sm:space-x-2">
           <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
@@ -92,7 +92,7 @@
       <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">
         MODULO 3.4
       </span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🪝 Hooks: Automacao de Eventos</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸª Hooks: Automacao de Eventos</h1>
       <p class="text-lg text-neutral-400 max-w-3xl">
         Hooks permitem executar codigo personalizado em resposta a eventos do Claude Code.
         Automatize validacoes, notificacoes e integracoes sem intervencao manual.
@@ -126,7 +126,7 @@
     <section id="topico-1" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">🎣 O que sao Hooks</h2>
+        <h2 class="text-2xl font-bold">ðŸŽ£ O que sao Hooks</h2>
       </div>
 
       <p class="text-neutral-300 mb-6 leading-relaxed">
@@ -137,22 +137,22 @@
 
       <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center">
-          <span class="mr-2">🔄</span> Fluxo de Eventos
+          <span class="mr-2">ðŸ”„</span> Fluxo de Eventos
         </h3>
         <div class="bg-dark-900 rounded-lg p-4 font-mono text-sm text-neutral-300 mb-4">
-<pre>┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   EVENTO    │ →  │    HOOK     │ →  │    ACAO     │
-│(PreToolUse) │    │ (seu script)│    │ (continua   │
-│             │    │             │    │  ou bloqueia)│
-└─────────────┘    └─────────────┘    └─────────────┘</pre>
+<pre>â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚   EVENTO    â”‚ â†’  â”‚    HOOK     â”‚ â†’  â”‚    ACAO     â”‚
+â”‚(PreToolUse) â”‚    â”‚ (seu script)â”‚    â”‚ (continua   â”‚
+â”‚             â”‚    â”‚             â”‚    â”‚  ou bloqueia)â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜</pre>
         </div>
         <ul class="space-y-2 text-neutral-300">
           <li class="flex items-start space-x-2">
-            <span class="text-purple-400 mt-1">•</span>
+            <span class="text-purple-400 mt-1">â€¢</span>
             <span><strong class="text-white">PreToolUse:</strong> Executa ANTES da ferramenta (pode bloquear com exit code 2)</span>
           </li>
           <li class="flex items-start space-x-2">
-            <span class="text-purple-400 mt-1">•</span>
+            <span class="text-purple-400 mt-1">â€¢</span>
             <span><strong class="text-white">PostToolUse:</strong> Executa DEPOIS da ferramenta (para cleanup/notificacoes)</span>
           </li>
         </ul>
@@ -160,25 +160,25 @@
 
       <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
         <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">📊</span> Eventos de Hook Disponiveis
+          <span class="mr-2">ðŸ“Š</span> Eventos de Hook Disponiveis
         </h3>
         <div class="grid grid-cols-2 gap-4">
           <div>
             <h4 class="text-white font-semibold mb-2">Eventos de Tool</h4>
             <ul class="space-y-1 text-neutral-300 text-sm">
-              <li>• <code class="text-purple-400">PreToolUse</code> - antes de executar ferramenta</li>
-              <li>• <code class="text-purple-400">PostToolUse</code> - depois de executar ferramenta</li>
-              <li>• <code class="text-purple-400">PermissionRequest</code> - ao pedir permissao</li>
+              <li>â€¢ <code class="text-purple-400">PreToolUse</code> - antes de executar ferramenta</li>
+              <li>â€¢ <code class="text-purple-400">PostToolUse</code> - depois de executar ferramenta</li>
+              <li>â€¢ <code class="text-purple-400">PermissionRequest</code> - ao pedir permissao</li>
             </ul>
           </div>
           <div>
             <h4 class="text-white font-semibold mb-2">Eventos de Sessao</h4>
             <ul class="space-y-1 text-neutral-300 text-sm">
-              <li>• <code class="text-purple-400">SessionStart</code> - inicio de sessao</li>
-              <li>• <code class="text-purple-400">SessionEnd</code> - fim de sessao</li>
-              <li>• <code class="text-purple-400">Stop</code> - agente termina resposta</li>
-              <li>• <code class="text-purple-400">SubagentStop</code> - subagente termina</li>
-              <li>• <code class="text-purple-400">Notification</code> - alertas do Claude</li>
+              <li>â€¢ <code class="text-purple-400">SessionStart</code> - inicio de sessao</li>
+              <li>â€¢ <code class="text-purple-400">SessionEnd</code> - fim de sessao</li>
+              <li>â€¢ <code class="text-purple-400">Stop</code> - agente termina resposta</li>
+              <li>â€¢ <code class="text-purple-400">SubagentStop</code> - subagente termina</li>
+              <li>â€¢ <code class="text-purple-400">Notification</code> - alertas do Claude</li>
             </ul>
           </div>
         </div>
@@ -189,7 +189,7 @@
     <section id="topico-2" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">⚙️ Configurando Hooks</h2>
+        <h2 class="text-2xl font-bold">âš™ï¸ Configurando Hooks</h2>
       </div>
 
       <p class="text-neutral-300 mb-6 leading-relaxed">
@@ -260,7 +260,7 @@
     <section id="topico-3" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">✍️ Hook pre-edit: Validacao</h2>
+        <h2 class="text-2xl font-bold">âœï¸ Hook pre-edit: Validacao</h2>
       </div>
 
       <p class="text-neutral-300 mb-6 leading-relaxed">
@@ -321,7 +321,7 @@ exit 0</pre>
 
       <div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
         <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Variaveis de Ambiente e Exit Codes
+          <span class="mr-2">ðŸ’¡</span> Variaveis de Ambiente e Exit Codes
         </h3>
         <div class="grid grid-cols-2 gap-4 text-sm">
           <div>
@@ -348,7 +348,7 @@ exit 0</pre>
     <section id="topico-4" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">🔔 Hook post-edit: Notificacoes</h2>
+        <h2 class="text-2xl font-bold">ðŸ”” Hook post-edit: Notificacoes</h2>
       </div>
 
       <p class="text-neutral-300 mb-6 leading-relaxed">
@@ -372,7 +372,7 @@ PROJECT_NAME=$(basename "$CLAUDE_PROJECT_DIR")
 curl -X POST "$SLACK_WEBHOOK" \
   -H "Content-Type: application/json" \
   -d "{
-    \"text\": \"🤖 Claude executou $TOOL_NAME\",
+    \"text\": \"ðŸ¤– Claude executou $TOOL_NAME\",
     \"blocks\": [{
       \"type\": \"section\",
       \"text\": {
@@ -409,19 +409,19 @@ echo "{
         <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
           <h4 class="font-bold text-emerald-400 mb-4">Casos de Uso</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
-            <li>• Notificacao em Slack/Teams</li>
-            <li>• Log de auditoria</li>
-            <li>• Trigger de CI/CD</li>
-            <li>• Sincronizacao com ferramentas</li>
+            <li>â€¢ Notificacao em Slack/Teams</li>
+            <li>â€¢ Log de auditoria</li>
+            <li>â€¢ Trigger de CI/CD</li>
+            <li>â€¢ Sincronizacao com ferramentas</li>
           </ul>
         </div>
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
           <h4 class="font-bold text-red-400 mb-4">Evitar em post-hooks</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
-            <li>• Operacoes lentas (> 3s)</li>
-            <li>• Modificar o arquivo editado</li>
-            <li>• Dependencias de rede criticas</li>
-            <li>• Logica que deveria bloquear</li>
+            <li>â€¢ Operacoes lentas (> 3s)</li>
+            <li>â€¢ Modificar o arquivo editado</li>
+            <li>â€¢ Dependencias de rede criticas</li>
+            <li>â€¢ Logica que deveria bloquear</li>
           </ul>
         </div>
       </div>
@@ -431,7 +431,7 @@ echo "{
     <section id="topico-5" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">🛡️ Hook pre-bash: Seguranca</h2>
+        <h2 class="text-2xl font-bold">ðŸ›¡ï¸ Hook pre-bash: Seguranca</h2>
       </div>
 
       <p class="text-neutral-300 mb-6 leading-relaxed">
@@ -478,7 +478,7 @@ exit 0</pre>
 
       <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center">
-          <span class="mr-2">⚠️</span> Comandos a Bloquear
+          <span class="mr-2">âš ï¸</span> Comandos a Bloquear
         </h3>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
           <code class="bg-dark-800 p-2 rounded text-red-400">rm -rf /</code>
@@ -492,7 +492,7 @@ exit 0</pre>
 
       <div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
         <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Dica Pro
+          <span class="mr-2">ðŸ’¡</span> Dica Pro
         </h3>
         <p class="text-neutral-300">
           Combine pre-bash hooks com o sistema de permissoes do Claude Code. O hook e uma
@@ -505,7 +505,7 @@ exit 0</pre>
     <section id="topico-6" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">📚 Biblioteca de Hooks</h2>
+        <h2 class="text-2xl font-bold">ðŸ“š Biblioteca de Hooks</h2>
       </div>
 
       <p class="text-neutral-300 mb-6 leading-relaxed">
@@ -583,40 +583,40 @@ fi</pre>
     <section class="mb-12">
       <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
         <h2 class="text-2xl font-bold mb-6 flex items-center">
-          <span class="mr-3">📋</span> Resumo do Modulo
+          <span class="mr-3">ðŸ“‹</span> Resumo do Modulo
         </h2>
 
         <div class="space-y-4 mb-8">
           <div class="flex items-start space-x-3">
-            <span class="text-purple-400 mt-1">✓</span>
+            <span class="text-purple-400 mt-1">âœ“</span>
             <div>
               <strong class="text-white">Hooks reagem a eventos</strong>
               <span class="text-neutral-400"> - PreToolUse, PostToolUse, SessionStart, Stop...</span>
             </div>
           </div>
           <div class="flex items-start space-x-3">
-            <span class="text-purple-400 mt-1">✓</span>
+            <span class="text-purple-400 mt-1">âœ“</span>
             <div>
               <strong class="text-white">Configuracao em .claude/settings.json</strong>
               <span class="text-neutral-400"> - ou ~/.claude/settings.json para global</span>
             </div>
           </div>
           <div class="flex items-start space-x-3">
-            <span class="text-purple-400 mt-1">✓</span>
+            <span class="text-purple-400 mt-1">âœ“</span>
             <div>
               <strong class="text-white">PreToolUse para validacao</strong>
               <span class="text-neutral-400"> - exit 2 bloqueia, exit 0 permite</span>
             </div>
           </div>
           <div class="flex items-start space-x-3">
-            <span class="text-purple-400 mt-1">✓</span>
+            <span class="text-purple-400 mt-1">âœ“</span>
             <div>
               <strong class="text-white">PostToolUse para integracoes</strong>
               <span class="text-neutral-400"> - formatacao, logging, notificacoes</span>
             </div>
           </div>
           <div class="flex items-start space-x-3">
-            <span class="text-purple-400 mt-1">✓</span>
+            <span class="text-purple-400 mt-1">âœ“</span>
             <div>
               <strong class="text-white">Matcher filtra ferramentas</strong>
               <span class="text-neutral-400"> - "Edit|Write|Bash" para especificar quais ativam o hook</span>
@@ -631,10 +631,10 @@ fi</pre>
 
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="modulo-3-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-            ← Modulo Anterior
+            â† Modulo Anterior
           </a>
           <a href="modulo-3-5.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">
-            Proximo Modulo →
+            Proximo Modulo â†’
           </a>
         </div>
       </div>
@@ -645,7 +645,7 @@ fi</pre>
   <!-- FOOTER -->
   <footer class="border-t border-dark-600 py-8 mt-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Claude Code 2026 - Curso criado por <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+      <p>Claude Code 2026 - Curso criado por <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300">ARCKHÉ AI</a></p>
     </div>
   </footer>
 

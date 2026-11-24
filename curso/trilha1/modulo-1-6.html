@@ -33,11 +33,11 @@
       <div class="flex justify-between items-center h-14">
         <div class="flex items-center space-x-4">
           <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🤖</span>
+            <span class="text-2xl">ðŸ¤–</span>
             <span class="font-bold text-lg hidden sm:inline">Claude Code 2026</span>
           </a>
           <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+          <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">ARCKHÉ AI</a>
         </div>
         <div class="flex items-center space-x-1 sm:space-x-2">
           <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10">
@@ -72,7 +72,7 @@
   <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULO 1.6</span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">💾 Sessoes e Persistencia</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ’¾ Sessoes e Persistencia</h1>
       <p class="text-lg text-neutral-400 max-w-3xl">Entenda o que persiste entre sessoes, como funcionam os snapshots, e estrategias para trabalhar com multiplos terminais.</p>
       <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
         <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Topicos</div></div>
@@ -88,27 +88,27 @@
     <section id="topico-1" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
-        <h2 class="text-2xl font-bold">🔄 Sessoes Stateless</h2>
+        <h2 class="text-2xl font-bold">ðŸ”„ Sessoes Stateless</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">Cada sessao do Claude Code e <strong class="text-emerald-400">stateless</strong> - quando voce fecha o terminal, o contexto da conversa se perde. Mas nem tudo e perdido: alguns dados persistem.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">❌ O que se PERDE</h4>
+          <h4 class="font-bold text-red-400 mb-4">âŒ O que se PERDE</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
-            <li>• Contexto da conversa</li>
-            <li>• Arquivos lidos em memoria</li>
-            <li>• Estados in-memory</li>
-            <li>• Decisoes nao documentadas</li>
+            <li>â€¢ Contexto da conversa</li>
+            <li>â€¢ Arquivos lidos em memoria</li>
+            <li>â€¢ Estados in-memory</li>
+            <li>â€¢ Decisoes nao documentadas</li>
           </ul>
         </div>
         <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-          <h4 class="font-bold text-emerald-400 mb-4">✅ O que PERSISTE</h4>
+          <h4 class="font-bold text-emerald-400 mb-4">âœ… O que PERSISTE</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
-            <li>• Arquivos criados/editados</li>
-            <li>• CLAUDE.md</li>
-            <li>• Git commits</li>
-            <li>• Pacotes instalados</li>
-            <li>• Historico de sessoes (~/.claude/)</li>
+            <li>â€¢ Arquivos criados/editados</li>
+            <li>â€¢ CLAUDE.md</li>
+            <li>â€¢ Git commits</li>
+            <li>â€¢ Pacotes instalados</li>
+            <li>â€¢ Historico de sessoes (~/.claude/)</li>
           </ul>
         </div>
       </div>
@@ -117,23 +117,23 @@
     <section id="topico-2" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
-        <h2 class="text-2xl font-bold">📸 Snapshots de Arquivos</h2>
+        <h2 class="text-2xl font-bold">ðŸ“¸ Snapshots de Arquivos</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">Antes de editar um arquivo, Claude <strong class="text-emerald-400">salva automaticamente uma copia</strong>. Isso permite reverter mudancas se algo der errado.</p>
       <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-emerald-400 mb-4">Como Funciona</h3>
         <div class="flex items-center justify-between text-sm">
-          <div class="text-center"><div class="w-16 h-16 rounded-full bg-dark-800 flex items-center justify-center mb-2"><span class="text-2xl">📄</span></div><span class="text-neutral-400">Arquivo original</span></div>
-          <div class="text-emerald-400 text-2xl">→</div>
-          <div class="text-center"><div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-2"><span class="text-2xl">📸</span></div><span class="text-neutral-400">Snapshot salvo</span></div>
-          <div class="text-emerald-400 text-2xl">→</div>
-          <div class="text-center"><div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mb-2"><span class="text-2xl">✏️</span></div><span class="text-neutral-400">Edit aplicado</span></div>
-          <div class="text-red-400 text-2xl">↩</div>
-          <div class="text-center"><div class="w-16 h-16 rounded-full bg-dark-800 flex items-center justify-center mb-2"><span class="text-2xl">🔄</span></div><span class="text-neutral-400">Rollback possivel</span></div>
+          <div class="text-center"><div class="w-16 h-16 rounded-full bg-dark-800 flex items-center justify-center mb-2"><span class="text-2xl">ðŸ“„</span></div><span class="text-neutral-400">Arquivo original</span></div>
+          <div class="text-emerald-400 text-2xl">â†’</div>
+          <div class="text-center"><div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-2"><span class="text-2xl">ðŸ“¸</span></div><span class="text-neutral-400">Snapshot salvo</span></div>
+          <div class="text-emerald-400 text-2xl">â†’</div>
+          <div class="text-center"><div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mb-2"><span class="text-2xl">âœï¸</span></div><span class="text-neutral-400">Edit aplicado</span></div>
+          <div class="text-red-400 text-2xl">â†©</div>
+          <div class="text-center"><div class="w-16 h-16 rounded-full bg-dark-800 flex items-center justify-center mb-2"><span class="text-2xl">ðŸ”„</span></div><span class="text-neutral-400">Rollback possivel</span></div>
         </div>
       </div>
       <div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
-        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica</h3>
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’¡</span> Dica</h3>
         <p class="text-neutral-300">Se Claude fez uma edicao errada, voce pode pedir: <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">"Reverta a ultima edicao no arquivo X"</code>. O snapshot sera restaurado.</p>
       </div>
     </section>
@@ -141,23 +141,23 @@
     <section id="topico-3" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
-        <h2 class="text-2xl font-bold">📁 Onde Ficam as Sessoes</h2>
+        <h2 class="text-2xl font-bold">ðŸ“ Onde Ficam as Sessoes</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">Todas as conversas sao salvas em <code class="bg-dark-700 px-2 py-1 rounded text-emerald-400">~/.claude/</code>. Voce pode recuperar historico de sessoes antigas!</p>
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
         <h4 class="font-semibold text-white mb-4">Estrutura da Pasta .claude</h4>
         <div class="bg-dark-900 rounded-lg p-4 font-mono text-sm">
           <p class="text-neutral-400">~/.claude/</p>
-          <p class="text-neutral-300 ml-4">├── sessions/       <span class="text-neutral-500"># Historico de conversas</span></p>
-          <p class="text-neutral-300 ml-4">├── settings.json   <span class="text-neutral-500"># Config global do usuario</span></p>
-          <p class="text-neutral-300 ml-4">├── commands/       <span class="text-neutral-500"># Comandos personalizados</span></p>
-          <p class="text-neutral-300 ml-4">└── skills/         <span class="text-neutral-500"># Skills globais (pessoais)</span></p>
+          <p class="text-neutral-300 ml-4">â”œâ”€â”€ sessions/       <span class="text-neutral-500"># Historico de conversas</span></p>
+          <p class="text-neutral-300 ml-4">â”œâ”€â”€ settings.json   <span class="text-neutral-500"># Config global do usuario</span></p>
+          <p class="text-neutral-300 ml-4">â”œâ”€â”€ commands/       <span class="text-neutral-500"># Comandos personalizados</span></p>
+          <p class="text-neutral-300 ml-4">â””â”€â”€ skills/         <span class="text-neutral-500"># Skills globais (pessoais)</span></p>
           <p class="text-neutral-400 mt-4">.claude/ (no projeto)</p>
-          <p class="text-neutral-300 ml-4">├── settings.json       <span class="text-neutral-500"># Config do projeto</span></p>
-          <p class="text-neutral-300 ml-4">├── settings.local.json <span class="text-neutral-500"># Config local (git ignored)</span></p>
-          <p class="text-neutral-300 ml-4">└── skills/             <span class="text-neutral-500"># Skills do projeto</span></p>
-          <p class="text-neutral-300 ml-8">└── nome-skill/</p>
-          <p class="text-neutral-300 ml-12">└── SKILL.md</p>
+          <p class="text-neutral-300 ml-4">â”œâ”€â”€ settings.json       <span class="text-neutral-500"># Config do projeto</span></p>
+          <p class="text-neutral-300 ml-4">â”œâ”€â”€ settings.local.json <span class="text-neutral-500"># Config local (git ignored)</span></p>
+          <p class="text-neutral-300 ml-4">â””â”€â”€ skills/             <span class="text-neutral-500"># Skills do projeto</span></p>
+          <p class="text-neutral-300 ml-8">â””â”€â”€ nome-skill/</p>
+          <p class="text-neutral-300 ml-12">â””â”€â”€ SKILL.md</p>
         </div>
       </div>
     </section>
@@ -165,24 +165,24 @@
     <section id="topico-4" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
-        <h2 class="text-2xl font-bold">🖥️ Multiplos Terminais</h2>
+        <h2 class="text-2xl font-bold">ðŸ–¥ï¸ Multiplos Terminais</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">Uma estrategia poderosa: usar <strong class="text-emerald-400">terminais separados para tarefas diferentes</strong>. Cada um tem seu proprio contexto.</p>
       <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-emerald-400 mb-4">Estrategia: Um Terminal = Uma Missao</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-dark-800/50 rounded-lg p-4"><div class="text-2xl mb-2">📋</div><h4 class="font-bold text-white">Terminal 1</h4><p class="text-neutral-400 text-sm">Planejamento e exploracao</p></div>
-          <div class="bg-dark-800/50 rounded-lg p-4"><div class="text-2xl mb-2">⚡</div><h4 class="font-bold text-white">Terminal 2</h4><p class="text-neutral-400 text-sm">Execucao de codigo</p></div>
-          <div class="bg-dark-800/50 rounded-lg p-4"><div class="text-2xl mb-2">🧪</div><h4 class="font-bold text-white">Terminal 3</h4><p class="text-neutral-400 text-sm">Testes e validacao</p></div>
+          <div class="bg-dark-800/50 rounded-lg p-4"><div class="text-2xl mb-2">ðŸ“‹</div><h4 class="font-bold text-white">Terminal 1</h4><p class="text-neutral-400 text-sm">Planejamento e exploracao</p></div>
+          <div class="bg-dark-800/50 rounded-lg p-4"><div class="text-2xl mb-2">âš¡</div><h4 class="font-bold text-white">Terminal 2</h4><p class="text-neutral-400 text-sm">Execucao de codigo</p></div>
+          <div class="bg-dark-800/50 rounded-lg p-4"><div class="text-2xl mb-2">ðŸ§ª</div><h4 class="font-bold text-white">Terminal 3</h4><p class="text-neutral-400 text-sm">Testes e validacao</p></div>
         </div>
       </div>
       <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
         <h3 class="text-lg font-semibold text-blue-400 mb-3">Vantagens</h3>
         <ul class="space-y-2 text-neutral-300">
-          <li>• Contextos isolados - nao poluem um ao outro</li>
-          <li>• Tarefas longas em background</li>
-          <li>• Exploracao sem afetar execucao</li>
-          <li>• Mais facil de gerenciar compaction</li>
+          <li>â€¢ Contextos isolados - nao poluem um ao outro</li>
+          <li>â€¢ Tarefas longas em background</li>
+          <li>â€¢ Exploracao sem afetar execucao</li>
+          <li>â€¢ Mais facil de gerenciar compaction</li>
         </ul>
       </div>
     </section>
@@ -190,7 +190,7 @@
     <section id="topico-5" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
-        <h2 class="text-2xl font-bold">🔍 Recuperando Sessoes Antigas</h2>
+        <h2 class="text-2xl font-bold">ðŸ” Recuperando Sessoes Antigas</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">Precisa de algo de uma conversa antiga? E possivel <strong class="text-emerald-400">recuperar historico de sessoes</strong>.</p>
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
@@ -205,38 +205,38 @@
     <section id="topico-6" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
-        <h2 class="text-2xl font-bold">📝 GitHub Issues como To-Do</h2>
+        <h2 class="text-2xl font-bold">ðŸ“ GitHub Issues como To-Do</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">Uma alternativa para persistir tarefas: use <strong class="text-emerald-400">GitHub Issues</strong> como lista de to-do que sobrevive entre sessoes.</p>
       <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-emerald-400 mb-4">Vantagens</h3>
         <ul class="space-y-2 text-neutral-300">
-          <li>• Persiste na nuvem - nunca perde</li>
-          <li>• Claude pode ler issues no inicio da sessao</li>
-          <li>• Nao polui CLAUDE.md</li>
-          <li>• Historico de progresso</li>
+          <li>â€¢ Persiste na nuvem - nunca perde</li>
+          <li>â€¢ Claude pode ler issues no inicio da sessao</li>
+          <li>â€¢ Nao polui CLAUDE.md</li>
+          <li>â€¢ Historico de progresso</li>
         </ul>
       </div>
       <div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
-        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">🚀</span> Proximo Passo</h3>
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">ðŸš€</span> Proximo Passo</h3>
         <p class="text-neutral-300">No proximo modulo vamos explorar <strong>Permissoes e Seguranca</strong> - como configurar o que Claude pode e nao pode fazer.</p>
       </div>
     </section>
 
     <section class="mb-12">
       <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
-        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📋</span> Resumo do Modulo</h2>
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸ“‹</span> Resumo do Modulo</h2>
         <div class="space-y-4 mb-8">
-          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Sessoes sao stateless</strong><span class="text-neutral-400"> - contexto nao persiste</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Snapshots salvam arquivos</strong><span class="text-neutral-400"> - rollback possivel</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Historico em ~/.claude/</strong><span class="text-neutral-400"> - recuperavel</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Multiplos terminais</strong><span class="text-neutral-400"> - contextos isolados</span></div></div>
-          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">GitHub Issues</strong><span class="text-neutral-400"> - to-do persistente</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-white">Sessoes sao stateless</strong><span class="text-neutral-400"> - contexto nao persiste</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-white">Snapshots salvam arquivos</strong><span class="text-neutral-400"> - rollback possivel</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-white">Historico em ~/.claude/</strong><span class="text-neutral-400"> - recuperavel</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-white">Multiplos terminais</strong><span class="text-neutral-400"> - contextos isolados</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">âœ“</span><div><strong class="text-white">GitHub Issues</strong><span class="text-neutral-400"> - to-do persistente</span></div></div>
         </div>
         <div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-emerald-400 mb-2">Proximo Modulo:</h3><p class="text-neutral-300">1.7 - Permissoes e Seguranca</p></div>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Modulo Anterior</a>
-          <a href="modulo-1-7.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Proximo Modulo →</a>
+          <a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">â† Modulo Anterior</a>
+          <a href="modulo-1-7.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Proximo Modulo â†’</a>
         </div>
       </div>
     </section>
@@ -244,7 +244,7 @@
 
   <footer class="border-t border-dark-600 py-8 mt-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Claude Code 2026 - Curso criado por <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+      <p>Claude Code 2026 - Curso criado por <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300">ARCKHÉ AI</a></p>
     </div>
   </footer>
 

@@ -39,7 +39,7 @@
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center">1</span>
 
 <!-- ERRADO - Seta -->
-<span class="text-emerald-400">▶</span>
+<span class="text-emerald-400">â–¶</span>
 ```
 
 ## 1.3 TRES SECOES OBRIGATORIAS POR TOPICO
@@ -49,10 +49,10 @@ Cada topico expansivel DEVE ter estas 3 secoes:
 - **Por que aprender:** Justificativa e beneficios
 - **Conceitos-chave:** Pontos principais
 
-## 1.4 INEMA.CLUB EM TODAS AS PAGINAS
+## 1.4 ARCKHÉ AI EM TODAS AS PAGINAS
 
 ```html
-<a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+<a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">ARCKHÉ AI</a>
 ```
 - **COR:** `text-sky-400` (azul claro)
 - **POSICAO:** Ao lado do logo, separado por `|`
@@ -97,35 +97,35 @@ html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
 
 ```
 [NOME DO CURSO]
-├── [EMOJI DO CURSO]
-├── X Trilhas (definir quantidade)
-│   ├── T1: [Nome] (Emerald) - X modulos
-│   ├── T2: [Nome] (Blue) - X modulos
-│   ├── T3: [Nome] (Purple) - X modulos
-│   ├── T4: [Nome] (Amber) - X modulos (opcional)
-│   ├── T5: [Nome] (Teal) - X modulos (opcional)
-│   └── T6: [Nome] (Rose) - X modulos (opcional)
-├── Total de Modulos
-├── 6-8 Topicos por Modulo
-└── Total de Topicos
+â”œâ”€â”€ [EMOJI DO CURSO]
+â”œâ”€â”€ X Trilhas (definir quantidade)
+â”‚   â”œâ”€â”€ T1: [Nome] (Emerald) - X modulos
+â”‚   â”œâ”€â”€ T2: [Nome] (Blue) - X modulos
+â”‚   â”œâ”€â”€ T3: [Nome] (Purple) - X modulos
+â”‚   â”œâ”€â”€ T4: [Nome] (Amber) - X modulos (opcional)
+â”‚   â”œâ”€â”€ T5: [Nome] (Teal) - X modulos (opcional)
+â”‚   â””â”€â”€ T6: [Nome] (Rose) - X modulos (opcional)
+â”œâ”€â”€ Total de Modulos
+â”œâ”€â”€ 6-8 Topicos por Modulo
+â””â”€â”€ Total de Topicos
 ```
 
 ## 2.2 Estrutura de Arquivos
 
 ```
 projeto/
-├── index.html                    # Landing page
-├── curso/
-│   ├── trilha1/                  # Primeira trilha
-│   │   ├── index.html            # Index da trilha
-│   │   ├── modulo-1-1.html       # Modulo completo
-│   │   ├── modulo-1-2.html
-│   │   └── ...
-│   ├── trilha2/
-│   ├── trilha3/
-│   └── ...
-├── doc/                          # Documentacao
-└── ref/                          # Referencias detalhadas
+â”œâ”€â”€ index.html                    # Landing page
+â”œâ”€â”€ curso/
+â”‚   â”œâ”€â”€ trilha1/                  # Primeira trilha
+â”‚   â”‚   â”œâ”€â”€ index.html            # Index da trilha
+â”‚   â”‚   â”œâ”€â”€ modulo-1-1.html       # Modulo completo
+â”‚   â”‚   â”œâ”€â”€ modulo-1-2.html
+â”‚   â”‚   â””â”€â”€ ...
+â”‚   â”œâ”€â”€ trilha2/
+â”‚   â”œâ”€â”€ trilha3/
+â”‚   â””â”€â”€ ...
+â”œâ”€â”€ doc/                          # Documentacao
+â””â”€â”€ ref/                          # Referencias detalhadas
 ```
 
 ---
@@ -148,7 +148,7 @@ projeto/
 | Cor | Codigo | Classe | Uso |
 |-----|--------|--------|-----|
 | Primary (Yellow) | `#FACC15` | `text-primary`, `bg-primary` | Logo, CTAs, destaques, dicas |
-| Sky | `#38bdf8` | `text-sky-400` | Link INEMA.CLUB |
+| Sky | `#38bdf8` | `text-sky-400` | Link ARCKHÉ AI |
 | Red | `#f87171` | `text-red-400` | "Nao fazer", erros, alertas |
 | Neutral 300 | `#d4d4d4` | `text-neutral-300` | Texto principal |
 | Neutral 400 | `#a3a3a3` | `text-neutral-400` | Texto secundario |
@@ -222,7 +222,7 @@ body { font-family: 'Inter', sans-serif; }
 ## 5.1 Elementos Obrigatorios
 
 1. **Logo** (emoji + nome) - `text-yellow-400`
-2. **Link INEMA.CLUB** - `text-sky-400`
+2. **Link ARCKHÉ AI** - `text-sky-400`
 3. **Trilhas** com nomes completos (mobile: T1, T2, T3...)
 4. **Theme Toggle** - botao dark/light
 
@@ -232,14 +232,14 @@ body { font-family: 'Inter', sans-serif; }
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-14">
-      <!-- Logo + INEMA.CLUB -->
+      <!-- Logo + ARCKHÉ AI -->
       <div class="flex items-center space-x-4">
         <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
           <span class="text-2xl">[EMOJI]</span>
           <span class="font-bold text-lg hidden sm:inline">[NOME DO CURSO]</span>
         </a>
         <span class="text-neutral-600">|</span>
-        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">ARCKHÉ AI</a>
       </div>
 
       <!-- Trilhas + Theme Toggle -->
@@ -286,63 +286,63 @@ body { font-family: 'Inter', sans-serif; }
 
 ```
 TRILHA INDEX
-├── Navigation Global
-│   ├── Logo (emoji + nome) - yellow-400
-│   ├── INEMA.CLUB - sky-400
-│   ├── Trilhas (nomes completos, cor da ativa)
-│   └── Theme Toggle
-├── Header com Gradiente
-│   ├── Badge (TRILHA X) - cor da trilha
-│   ├── Titulo + emoji
-│   ├── Descricao
-│   └── Stats Grid (4 colunas: Modulos, Topicos, Duracao, Nivel)
-├── Navegacao Rapida (grid de cards) - OPCIONAL
-├── Divisor "Conteudo Detalhado"
-├── Cards de Modulo (repetido)
-│   ├── Header
-│   │   ├── Numero do modulo (X.X) - cor da trilha
-│   │   ├── Duracao (~XX min)
-│   │   ├── Titulo com emoji - TEXT-2XL
-│   │   └── Descricao
-│   ├── Topicos Expansiveis (6-8 por modulo)
-│   │   ├── NUMERO em circulo (NAO seta)
-│   │   ├── Emoji + titulo + subtitulo
-│   │   └── 3 secoes: O que e / Por que / Conceitos
-│   └── Botoes (ESQUERDA - justify-start)
-│       ├── Ver em Modal
-│       └── Ver Completo
-├── Navegacao (Voltar | Proxima Trilha)
-└── Footer
+â”œâ”€â”€ Navigation Global
+â”‚   â”œâ”€â”€ Logo (emoji + nome) - yellow-400
+â”‚   â”œâ”€â”€ ARCKHÉ AI - sky-400
+â”‚   â”œâ”€â”€ Trilhas (nomes completos, cor da ativa)
+â”‚   â””â”€â”€ Theme Toggle
+â”œâ”€â”€ Header com Gradiente
+â”‚   â”œâ”€â”€ Badge (TRILHA X) - cor da trilha
+â”‚   â”œâ”€â”€ Titulo + emoji
+â”‚   â”œâ”€â”€ Descricao
+â”‚   â””â”€â”€ Stats Grid (4 colunas: Modulos, Topicos, Duracao, Nivel)
+â”œâ”€â”€ Navegacao Rapida (grid de cards) - OPCIONAL
+â”œâ”€â”€ Divisor "Conteudo Detalhado"
+â”œâ”€â”€ Cards de Modulo (repetido)
+â”‚   â”œâ”€â”€ Header
+â”‚   â”‚   â”œâ”€â”€ Numero do modulo (X.X) - cor da trilha
+â”‚   â”‚   â”œâ”€â”€ Duracao (~XX min)
+â”‚   â”‚   â”œâ”€â”€ Titulo com emoji - TEXT-2XL
+â”‚   â”‚   â””â”€â”€ Descricao
+â”‚   â”œâ”€â”€ Topicos Expansiveis (6-8 por modulo)
+â”‚   â”‚   â”œâ”€â”€ NUMERO em circulo (NAO seta)
+â”‚   â”‚   â”œâ”€â”€ Emoji + titulo + subtitulo
+â”‚   â”‚   â””â”€â”€ 3 secoes: O que e / Por que / Conceitos
+â”‚   â””â”€â”€ Botoes (ESQUERDA - justify-start)
+â”‚       â”œâ”€â”€ Ver em Modal
+â”‚       â””â”€â”€ Ver Completo
+â”œâ”€â”€ Navegacao (Voltar | Proxima Trilha)
+â””â”€â”€ Footer
 ```
 
 ## 6.2 Pagina de Modulo
 
 ```
 MODULO COMPLETO
-├── Navigation Global (identico ao index)
-├── Breadcrumb (Inicio / Trilha X / Modulo X.X)
-├── Header
-│   ├── Badge (MODULO X.X)
-│   ├── Titulo + emoji
-│   ├── Descricao
-│   └── Stats (Topicos, Minutos, Nivel, Tipo)
-├── Topicos (6 secoes ricas)
-│   └── Section por topico
-│       ├── Numero em circulo GRANDE (w-12 h-12)
-│       ├── Titulo h2
-│       ├── Paragrafo introdutorio
-│       └── Boxes variados:
-│           ├── Conceito Principal (gradiente da trilha)
-│           ├── Dados/Pesquisa (blue)
-│           ├── Dica Pratica (primary/yellow)
-│           ├── Grid Fazer vs Evitar (emerald/red)
-│           ├── Timeline de casos/passos
-│           └── Box de alerta (red) - quando necessario
-├── Resumo Final
-│   ├── Checklist do que aprendemos
-│   ├── Proximo modulo
-│   └── CTAs de navegacao
-└── Footer
+â”œâ”€â”€ Navigation Global (identico ao index)
+â”œâ”€â”€ Breadcrumb (Inicio / Trilha X / Modulo X.X)
+â”œâ”€â”€ Header
+â”‚   â”œâ”€â”€ Badge (MODULO X.X)
+â”‚   â”œâ”€â”€ Titulo + emoji
+â”‚   â”œâ”€â”€ Descricao
+â”‚   â””â”€â”€ Stats (Topicos, Minutos, Nivel, Tipo)
+â”œâ”€â”€ Topicos (6 secoes ricas)
+â”‚   â””â”€â”€ Section por topico
+â”‚       â”œâ”€â”€ Numero em circulo GRANDE (w-12 h-12)
+â”‚       â”œâ”€â”€ Titulo h2
+â”‚       â”œâ”€â”€ Paragrafo introdutorio
+â”‚       â””â”€â”€ Boxes variados:
+â”‚           â”œâ”€â”€ Conceito Principal (gradiente da trilha)
+â”‚           â”œâ”€â”€ Dados/Pesquisa (blue)
+â”‚           â”œâ”€â”€ Dica Pratica (primary/yellow)
+â”‚           â”œâ”€â”€ Grid Fazer vs Evitar (emerald/red)
+â”‚           â”œâ”€â”€ Timeline de casos/passos
+â”‚           â””â”€â”€ Box de alerta (red) - quando necessario
+â”œâ”€â”€ Resumo Final
+â”‚   â”œâ”€â”€ Checklist do que aprendemos
+â”‚   â”œâ”€â”€ Proximo modulo
+â”‚   â””â”€â”€ CTAs de navegacao
+â””â”€â”€ Footer
 ```
 
 ## 6.3 Espacamento Padrao
@@ -549,7 +549,7 @@ MODULO COMPLETO
   <p class="text-neutral-300 mb-4">Texto explicativo...</p>
   <ul class="space-y-2 text-neutral-300">
     <li class="flex items-start space-x-2">
-      <span class="text-emerald-400 mt-1">•</span>
+      <span class="text-emerald-400 mt-1">â€¢</span>
       <span>Item da lista</span>
     </li>
   </ul>
@@ -585,19 +585,19 @@ MODULO COMPLETO
 ```html
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
   <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-    <h4 class="font-bold text-emerald-400 mb-4">✓ O que FAZER</h4>
+    <h4 class="font-bold text-emerald-400 mb-4">âœ“ O que FAZER</h4>
     <ul class="space-y-3 text-neutral-300">
       <li class="flex items-start space-x-2">
-        <span class="text-emerald-400">✓</span>
+        <span class="text-emerald-400">âœ“</span>
         <span>Item positivo</span>
       </li>
     </ul>
   </div>
   <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-    <h4 class="font-bold text-red-400 mb-4">✗ O que NAO fazer</h4>
+    <h4 class="font-bold text-red-400 mb-4">âœ— O que NAO fazer</h4>
     <ul class="space-y-3 text-neutral-300">
       <li class="flex items-start space-x-2">
-        <span class="text-red-400">✗</span>
+        <span class="text-red-400">âœ—</span>
         <span>Item negativo</span>
       </li>
     </ul>
@@ -644,7 +644,7 @@ MODULO COMPLETO
 
     <div class="space-y-4 mb-8">
       <div class="flex items-start space-x-3">
-        <span class="text-emerald-400 mt-1">✓</span>
+        <span class="text-emerald-400 mt-1">âœ“</span>
         <div>
           <strong class="text-white">Ponto principal</strong>
           <span class="text-neutral-400"> - Explicacao breve</span>
@@ -660,10 +660,10 @@ MODULO COMPLETO
 
     <div class="flex flex-col sm:flex-row gap-4">
       <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-        ← Voltar para Trilha
+        â† Voltar para Trilha
       </a>
       <a href="modulo-1-2.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
-        Proximo Modulo →
+        Proximo Modulo â†’
       </a>
     </div>
   </div>
@@ -863,14 +863,14 @@ html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
 
 **SEMPRE verificar antes de finalizar qualquer pagina:**
 
-1. ✓ Botoes a ESQUERDA (justify-start)
-2. ✓ Numeros em circulo (nao setas)
-3. ✓ 3 secoes por topico
-4. ✓ INEMA.CLUB presente (sky-400)
-5. ✓ Light mode CSS incluido
-6. ✓ Titulo do modulo com text-2xl
-7. ✓ Cores corretas da trilha
-8. ✓ Theme toggle funcionando
+1. âœ“ Botoes a ESQUERDA (justify-start)
+2. âœ“ Numeros em circulo (nao setas)
+3. âœ“ 3 secoes por topico
+4. âœ“ ARCKHÉ AI presente (sky-400)
+5. âœ“ Light mode CSS incluido
+6. âœ“ Titulo do modulo com text-2xl
+7. âœ“ Cores corretas da trilha
+8. âœ“ Theme toggle funcionando
 
 ---
 
