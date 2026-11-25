@@ -10,15 +10,15 @@ Portuguese-language educational course about **Claude Code** (Anthropic CLI). Tr
 
 ```
 ccguide2026/
-â”œâ”€â”€ doc/              # Course content and documentation
-â”‚   â”œâ”€â”€ guia2026.md                     # Video transcript with prompts/hacks
-â”‚   â”œâ”€â”€ Claude_Code_Deep_Dive_PT-BR.md  # Portuguese summary guide
-â”‚   â””â”€â”€ claude_code_video_separacoes.md # Video segmentation options
-â”œâ”€â”€ ref/              # Templates and checklists
-â”‚   â”œâ”€â”€ MASTER_COMPLETO.md    # Complete HTML/CSS/JS template reference
-â”‚   â””â”€â”€ CHECKLIST_REVISAO.md  # Mandatory review checklist
-â”œâ”€â”€ partes/           # Video files (.webm) segmented by topic
-â””â”€â”€ package.json      # Node project with bmad-method
+ê¢âÅê¢ââ¬ê¢ââ¬ doc/              # Course content and documentation
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ guia2026.md                     # Video transcript with prompts/hacks
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ Claude_Code_Deep_Dive_PT-BR.md  # Portuguese summary guide
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ claude_code_video_separacoes.md # Video segmentation options
+ê¢âÅê¢ââ¬ê¢ââ¬ ref/              # Templates and checklists
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ MASTER_COMPLETO.md    # Complete HTML/CSS/JS template reference
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ CHECKLIST_REVISAO.md  # Mandatory review checklist
+ê¢âÅê¢ââ¬ê¢ââ¬ partes/           # Video files (.webm) segmented by topic
+ê¢ââê¢ââ¬ê¢ââ¬ package.json      # Node project with bmad-method
 ```
 
 ## BMad Method (Development Framework)
@@ -42,23 +42,23 @@ This project uses **BMad Method v6** - an AI-driven agile development framework.
 
 | Agent | Name | Icon | Role |
 |-------|------|------|------|
-| BMad Master | - | ðŸ§™ | Orchestrator, help & guidance |
-| Analyst | Mary | ðŸ“Š | Business analysis, research, product brief |
-| PM | John | ðŸ“‹ | PRD creation, epics & stories |
-| Architect | Winston | ðŸ—ï¸ | System architecture, technical design |
-| Developer | Amelia | ðŸ’» | Story implementation, code |
-| UX Designer | - | ðŸŽ¨ | User experience design |
-| Scrum Master | - | ðŸƒ | Sprint planning, retrospectives |
-| Tech Writer | - | âœï¸ | Documentation |
-| Quinn (QA) | - | ðŸ§ª | Test automation |
+| BMad Master | - | ê°Å¸Â§â¢ | Orchestrator, help & guidance |
+| Analyst | Mary | ê°Å¸âÅ  | Business analysis, research, product brief |
+| PM | John | ê°Å¸ââ¹ | PRD creation, epics & stories |
+| Architect | Winston | ê°Å¸Ââê¯Â¸Â | System architecture, technical design |
+| Developer | Amelia | ê°Å¸âÂ» | Story implementation, code |
+| UX Designer | - | ê°Å¸Å½Â¨ | User experience design |
+| Scrum Master | - | ê°Å¸ÂÆ | Sprint planning, retrospectives |
+| Tech Writer | - | ê¢ÅÂê¯Â¸Â | Documentation |
+| Quinn (QA) | - | ê°Å¸Â§Âª | Test automation |
 
 ### Workflows
 
 **Quick Flow** (bug fixes, small features):
-1. `/quick-spec` â†’ 2. `/dev-story` â†’ 3. `/code-review`
+1. `/quick-spec` ê¢â â 2. `/dev-story` ê¢â â 3. `/code-review`
 
 **Full Planning** (complex projects):
-1. `/product-brief` â†’ 2. `/create-prd` â†’ 3. `/create-architecture` â†’ 4. `/create-epics-and-stories` â†’ 5. `/sprint-planning` â†’ 6. `/dev-story` â†’ 7. `/code-review`
+1. `/product-brief` ê¢â â 2. `/create-prd` ê¢â â 3. `/create-architecture` ê¢â â 4. `/create-epics-and-stories` ê¢â â 5. `/sprint-planning` ê¢â â 6. `/dev-story` ê¢â â 7. `/code-review`
 
 ---
 
@@ -79,12 +79,12 @@ This project uses **BMad Method v6** - an AI-driven agile development framework.
 | Rule | Correct | Incorrect |
 |------|---------|-----------|
 | Button alignment | `justify-start` (LEFT) | `justify-center` |
-| Topic numbers | Circular badge `w-6 h-6 rounded-full` | Arrows â–¶ or â†’ |
-| Topic sections | 3 sections: "O que Ã©", "Por que aprender", "Conceitos-chave" | Fewer sections |
+| Topic numbers | Circular badge `w-6 h-6 rounded-full` | Arrows ê¢âÂ¶ or ê¢â â |
+| Topic sections | 3 sections: "O que êÂ©", "Por que aprender", "Conceitos-chave" | Fewer sections |
 | Module titles | `text-2xl font-bold` | Smaller sizes |
 
 **Required on ALL pages:**
-- ARCKHÉ AI link with `text-sky-400` next to logo
+- ARCKHê AI link with `text-sky-400` next to logo
 - Light mode CSS override block in `<style>`
 - Theme toggle functionality
 
@@ -110,7 +110,7 @@ Based on video "How Claude Code Actually Works":
 
 1. **Motivation** - Why understand Claude Code internals
 2. **Architecture** - CLI, Session Manager, Tool Executor, Permission Layer
-3. **Core Loop** - **Gather â†’ Act â†’ Verify**
+3. **Core Loop** - **Gather ê¢â â Act ê¢â â Verify**
 4. **Tools** - Read, Write, Edit, Glob, Grep, Bash
 5. **Context Management** - The "bucket" analogy, compaction strategies
 6. **Sessions** - Stateless sessions, snapshots, persistence
@@ -127,7 +127,7 @@ Based on video "How Claude Code Actually Works":
     <div><span class="font-medium">Title</span></div>
   </button>
   <div class="topic-explanation px-6 pb-4">
-    <!-- 3 sections: O que Ã©, Por que aprender, Conceitos-chave -->
+    <!-- 3 sections: O que êÂ©, Por que aprender, Conceitos-chave -->
   </div>
 </div>
 ```

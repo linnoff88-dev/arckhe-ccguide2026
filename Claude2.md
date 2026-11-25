@@ -10,15 +10,15 @@ This is a Portuguese-language educational course project about **Claude Code** (
 
 ```
 ccguide2026/
-â”œâ”€â”€ doc/           # Main documentation and course content
-â”‚   â”œâ”€â”€ guia2026.md                    # Video timestamps and transcript
-â”‚   â”œâ”€â”€ Claude_Code_Deep_Dive_PT-BR.md # Portuguese deep-dive guide
-â”‚   â””â”€â”€ claude_code_video_separacoes.md # Video segmentation options
-â”œâ”€â”€ ref/           # Reference templates and checklists
-â”‚   â”œâ”€â”€ MASTER_COMPLETO.md  # Complete HTML/CSS template reference
-â”‚   â””â”€â”€ CHECKLIST_REVISAO.md # Review checklist for pages
-â”œâ”€â”€ partes/        # Video files (.webm) segmented by topic
-â””â”€â”€ package.json   # Node project (uses bmad-method dev dependency)
+ê¢âÅê¢ââ¬ê¢ââ¬ doc/           # Main documentation and course content
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ guia2026.md                    # Video timestamps and transcript
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ Claude_Code_Deep_Dive_PT-BR.md # Portuguese deep-dive guide
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ claude_code_video_separacoes.md # Video segmentation options
+ê¢âÅê¢ââ¬ê¢ââ¬ ref/           # Reference templates and checklists
+ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ MASTER_COMPLETO.md  # Complete HTML/CSS template reference
+ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ CHECKLIST_REVISAO.md # Review checklist for pages
+ê¢âÅê¢ââ¬ê¢ââ¬ partes/        # Video files (.webm) segmented by topic
+ê¢ââê¢ââ¬ê¢ââ¬ package.json   # Node project (uses bmad-method dev dependency)
 ```
 
 ## Key Reference Documents
@@ -36,9 +36,9 @@ When creating course pages, consult these in order:
 ### Critical Rules (from MASTER_COMPLETO.md)
 
 1. **Buttons always LEFT-aligned**: Use `justify-start`, never `justify-center`
-2. **Topic numbers in circles**: Never use arrows (â–¶), always circular number badges
-3. **Three sections per topic**: Each expandable topic must have "O que Ã©", "Por que aprender", "Conceitos-chave"
-4. **ARCKHÉ AI link**: Required on all pages with `text-sky-400`
+2. **Topic numbers in circles**: Never use arrows (ê¢âÂ¶), always circular number badges
+3. **Three sections per topic**: Each expandable topic must have "O que êÂ©", "Por que aprender", "Conceitos-chave"
+4. **ARCKHê AI link**: Required on all pages with `text-sky-400`
 5. **Light mode CSS**: Required override block in every page
 6. **Module titles**: Use `text-2xl font-bold`
 
@@ -63,7 +63,7 @@ When creating course pages, consult these in order:
 The course covers Claude Code internals based on video segmentation:
 1. Motivation and learning approach
 2. Architecture (CLI, Session Manager, Tool Executor, Permission Layer)
-3. Core loop: **Gather â†’ Act â†’ Verify**
+3. Core loop: **Gather ê¢â â Act ê¢â â Verify**
 4. Tools: Read, Write, Edit, Glob, Grep, Bash
 5. Context management and compaction
 6. Sessions and persistence
